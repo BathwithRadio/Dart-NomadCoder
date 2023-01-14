@@ -41,7 +41,6 @@ void main() {
     age: 12,
   );
 
-  // var player2 = Player('minking2', 5500, 'blue', 12);
-  // player2.sayHello();
+  // without required on named constructor, you have to delete xxx :
   var redPlayer = Player.createRedPlayer('minking2', 12);
 }
