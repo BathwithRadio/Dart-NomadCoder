@@ -1,8 +1,12 @@
+abstract class Human {
+  void walk();
+}
+
 enum Team { red, blue }
 
 enum XPLevel { Beginner, Medium, Pro }
 
-class Player {
+class Player extends Human {
   String name;
   XPLevel xp;
   Team team;
@@ -14,8 +18,19 @@ class Player {
     required this.team,
   });
 
+  void walk() {
+    print("I'm walking");
+  }
+
   void sayHello() {
     print("Hi my name is $name, team = $team");
+  }
+}
+
+class Coach extends Human {
+  //
+  void walk() {
+    print("the Coach is walking");
   }
 }
 
