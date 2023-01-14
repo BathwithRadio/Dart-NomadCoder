@@ -1,7 +1,11 @@
+enum Team { red, blue }
+
+enum XPLevel { Beginner, Medium, Pro }
+
 class Player {
   String name;
-  int xp;
-  String team;
+  XPLevel xp;
+  Team team;
 
   // initialize constructor
   Player({
@@ -22,10 +26,10 @@ void main() {
   // nico.xp = 1200000;
   // nico.team = 'blue';
   // same!
-  var nico = Player(name: 'nico', xp: 1222, team: 'red')
+  var nico = Player(name: 'nico', xp: XPLevel.Medium, team: Team.blue);
   var potato = nico
     ..name = 'asd'
-    ..xp = 1200000
-    ..team = 'blue'
+    ..xp = XPLevel.Pro
+    ..team = Team.red
     ..sayHello();
 }
