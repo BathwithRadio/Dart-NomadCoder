@@ -1,15 +1,32 @@
 class Player {
   final String name;
-  int xp;
+  int xp, age;
   String team;
-  int age;
 
   Player({
+    // named constructor parameters
     required this.name,
     required this.xp,
     required this.team,
     required this.age,
   });
+
+  //⭐️ named constructor ⭐️
+  // Dart specific syntax
+  // with ':' we tell Dart I'll initialize Player object
+  Player.createBluePlayer({
+    required String name,
+    required int age,
+  })  : this.age = age,
+        this.name = name,
+        this.team = 'blue',
+        this.xp = 0;
+
+  Player.createRedPlayer(String name, int age)
+      : this.age = age,
+        this.name = name,
+        this.team = 'red',
+        this.xp = 0;
 
   void sayHello() {
     print("Hi my name is $name and xp is $xp");
@@ -19,20 +36,12 @@ class Player {
 void main() {
   //
   // flutter all about this one
-  var player = Player(
+  var bluePlayer = Player.createBluePlayer(
     name: 'minking',
-    xp: 1500,
-    team: 'red',
     age: 12,
   );
-  player.sayHello();
 
   // var player2 = Player('minking2', 5500, 'blue', 12);
   // player2.sayHello();
-  var player2 = Player(
-    name: 'minking2',
-    xp: 5500,
-    team: 'blue',
-    age: 12,
-  );
+  var redPlayer = Player.createRedPlayer('minking2', 12);
 }
