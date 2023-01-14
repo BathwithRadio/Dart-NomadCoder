@@ -1,8 +1,10 @@
 // for null safety, you need to put default value
+// or you can put 'required'
 String sayHello({
-  String name = 'anon',
-  int age = 666,
-  String country = 'wakanda',
+  // String name = 'anon',
+  required String name,
+  required int age,
+  required String country,
 }) {
   return "Hello $name, you are $age, and you come from $country";
 }
@@ -13,8 +15,8 @@ void main() {
 
   // with name of the argument, no need to care order
   print(sayHello(
-    age: null,
-    // country: 'korea',
+    age: 12,
+    country: 'korea',
     name: 'minking',
   ));
 }
